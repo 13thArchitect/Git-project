@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상어 계산기</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <!-- 디스플레이 영역 -->
+      <div class="display-container">0</div>
+
+      <!-- 1번째 줄: 기능 버튼 (상어 없음) -->
+      <div class="button-row" data-color="none">
+        <button class="button">C</button>
+        <button class="button">±</button>
+        <button class="button">%</button>
+        <button class="button operator">/</button>
+      </div>
+
+      <!-- 2번째 줄: 노랑 상어 -->
+      <div class="button-row" data-color="yellow">
+        <div class="character walk-yellow"></div>
+        <button class="button number">7</button>
+        <button class="button number">8</button>
+        <button class="button number">9</button>
+        <button class="button operator">*</button>
+      </div>
+
+      <!-- 3번째 줄: 빨강 상어 -->
+      <div class="button-row" data-color="red">
+        <div class="character walk-red"></div>
+        <button class="button number">4</button>
+        <button class="button number">5</button>
+        <button class="button number">6</button>
+        <button class="button operator">-</button>
+      </div>
+
+      <!-- 4번째 줄: 핑크 상어 -->
+      <div class="button-row" data-color="pink">
+        <div class="character walk-pink"></div>
+        <button class="button number">1</button>
+        <button class="button number">2</button>
+        <button class="button number">3</button>
+        <button class="button operator">+</button>
+      </div>
+
+      <!-- 5번째 줄: 검정 상어 (맨 아래에 있던 검정 상어 행을 위로 이동) -->
+      <div class="button-row" data-color="black">
+        <div class="character walk-black"></div>
+        <button class="button number zero">0</button>
+        <button class="button">.</button>
+        <button class="button">=</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

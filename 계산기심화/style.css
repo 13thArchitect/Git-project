@@ -1,0 +1,135 @@
+/* 기본 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 바디 중앙 정렬 및 배경 */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe0ec, #c8eaff);
+}
+
+/* 계산기 컨테이너 */
+.calculator-container {
+  width: 400px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+/* 디스플레이 */
+.display-container {
+  height: 60px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+/* 버튼 행 */
+.button-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 60px;
+}
+
+/* extra 행 (상어 없음) */
+.button-row.extra[data-color="none"] .character {
+  display: none;
+}
+
+/* data-color="none"인 행은 상어 숨김 */
+.button-row[data-color="none"] .character {
+  display: none;
+}
+
+/* 공통 버튼 스타일 */
+.button {
+  flex: 1;
+  height: 40px;
+  font-size: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+/* 0 버튼은 두 칸 */
+.zero {
+  flex-basis: 50%;
+}
+
+/* ========== 캐릭터 스타일 ========== */
+.character {
+  position: absolute;
+  left: -40px; /* 시작은 왼쪽 바깥 */
+  width: 40px;
+  height: 40px;
+  animation: rowWalk 4s linear infinite; /* 좌우 반복 이동 */
+}
+
+/* 걸어다니는 상어 이미지 */
+.walk-black {
+  background: url("images/walk-black.png") no-repeat center/contain;
+}
+.walk-yellow {
+  background: url("images/walk-yellow.png") no-repeat center/contain;
+}
+.walk-red {
+  background: url("images/walk-red.png") no-repeat center/contain;
+}
+.walk-pink {
+  background: url("images/walk-pink.png") no-repeat center/contain;
+}
+
+/* 멈춘 상어 이미지 */
+.stop-black {
+  background: url("images/stop-black.png") no-repeat center/contain;
+}
+.stop-yellow {
+  background: url("images/stop-yellow.png") no-repeat center/contain;
+}
+.stop-red {
+  background: url("images/stop-red.png") no-repeat center/contain;
+}
+.stop-pink {
+  background: url("images/stop-pink.png") no-repeat center/contain;
+}
+
+/* 캐릭터 자동 이동 애니메이션 */
+@keyframes rowWalk {
+  0% {
+    left: -40px;
+    transform: scaleX(1);
+  }
+  50% {
+    left: calc(100% - 40px);
+    transform: scaleX(1);
+  }
+  51% {
+    transform: scaleX(-1);
+  }
+  100% {
+    left: -40px;
+    transform: scaleX(-1);
+  }
+}
